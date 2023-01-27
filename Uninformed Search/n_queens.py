@@ -106,6 +106,7 @@ Tree_Search(n)
 if (len(sol) > 0):
   print_sol()  #prints solutions
   print("Number of solutions: ", len(sol))
-  print("Number of non attacking states: ", len(non_attack))
+  print("Number of non attacking states excluding the state with 0 queens on the board: ", len(non_attack))
+  print("Number of non attacking states including the state with 0 queens on the board: ", len(non_attack)+1)
 else:
   print("No solution is possible")

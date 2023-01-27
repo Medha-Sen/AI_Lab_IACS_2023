@@ -78,7 +78,7 @@ def succ(s1):  # adds safe successors to the wait queue
           if (repeated_state(s2) == False):  # checks whether repeated state or not
             waitq.append(s2)
             non_attack.append(s2)
-  else:  # enters only when no queen is present in the board
+  else:  
     if r != s1.n - 1:  # excluding the case where all queens are filled
       for i in range(n):
         s2 = deepcopy(s1)

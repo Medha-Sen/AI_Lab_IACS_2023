@@ -58,7 +58,7 @@ def repeated_state(s2):  # checks whether the current state is already in the wa
   return False
 
 
-def last_queen(s1):  # returns the row number of the last placed queen
+def last_queen(s1):  # returns the row number of the last placed queen in previous row iteration
   k = -1
   for i in range(n):
     for j in range(n):
@@ -68,7 +68,7 @@ def last_queen(s1):  # returns the row number of the last placed queen
 
 
 def succ(s1):  # adds safe successors to the wait queue
-  r = last_queen(s1)  #gets row number of last placed queen
+  r = last_queen(s1)  #gets row number of the last placed queen in previous row iteration
   if r != -1 and r != s1.n - 1:  #excluding cases where no queen is present and the case where all queens are placed
     for i in range(r + 2):
       for j in range(s1.n):
@@ -92,7 +92,7 @@ def Tree_Search(x):  # implements DFS
   waitq.append(s)  #appending to the wait queue
   while (len(waitq) > 0):
     s1 = waitq.pop(0)  # popping from the wait queue
-    if (goal(s1)):  #checking whether goal is met
+    if (goal(s1)):  #checking whether goal is met or not
       sol.append(s1)  # appending to the list of solutions
     succ(s1)  # adding the successors to the wait queue
 

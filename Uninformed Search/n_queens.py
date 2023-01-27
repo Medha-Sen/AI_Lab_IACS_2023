@@ -72,12 +72,10 @@ def succ(s1):  # adds safe successors to the wait queue
   if r != -1 and r != s1.n - 1:  #excluding cases where no queen is present and the case where all queens are placed
     for i in range(r + 2):
       for j in range(s1.n):
-        if (s1.mat[i][j] == 0
-            and is_safe(s1, i, j) == True):  # checks whether safe state or not
+        if (s1.mat[i][j] == 0 and is_safe(s1, i, j) == True):  # checks whether safe state or not
           s2 = deepcopy(s1)  # deep copies the state
           s2.mat[i][j] = 1
-          if (repeated_state(s2) == False
-              ):  # checks whether repeated state or not
+          if (repeated_state(s2) == False):  # checks whether repeated state or not
             waitq.append(s2)
             non_attack.append(s2)
   else:  # enters only when no queen is present in the board

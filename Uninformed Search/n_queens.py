@@ -87,7 +87,7 @@ def succ(s1):  # adds safe successors to the wait queue
         non_attack.append(s2)
 
 
-def Tree_Search(x):  # implements DFS
+def Tree_Search(x):  # implements BFS
   s = state(x)
   waitq.append(s)  #appending to the wait queue
   while (len(waitq) > 0):

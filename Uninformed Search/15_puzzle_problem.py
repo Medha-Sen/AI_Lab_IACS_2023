@@ -41,8 +41,8 @@ def goal_test(n): # goal test
     else:
      return False
 
-def get_blank(n1): #gets row and column position of blank tile
-    i, j = np.where(n1.mat == 0)
+def get_blank(mat): #gets row and column position of blank tile
+    i, j = np.where(mat == 0)
     return (i[0],j[0])
 
 def in_openlist(mat): #checks whether in openlist
@@ -57,7 +57,7 @@ def in_closedlist(mat): #checks whether in closed list
             return True
     return False
 def succ(n1):
-     (r,c)=get_blank(n1)
+     (r,c)=get_blank(n1.mat)
      l=[]
      if c!=0: #checking if leftmost column
         n2 = np.copy(n1.mat) #makes a copy of original state
@@ -106,6 +106,37 @@ def Tree_Search(initial):
         closedlist.append(n1) #list of explored states
     return False
 
+def parity_checker(mat): #checks the parity
+  temp = []
+  inv=0
+  for i in range(n):
+    for j in range(n):
+        temp.append(mat[i][j])
+  for i in range(len(temp)):
+      x = i+1
+      for j in range(x, len(temp)):
+          if(temp[i] > temp[j]):
+              inv+=1 #counting no. of inversions
+  if n%2!=0:# odd n
+    if inv%2==0:
+      return 1
+    else:
+      return 0
+  else: #even n
+    (r,c)=get_blank(mat)
+    inv=inv+r
+    if inv%2==0:
+      return 1
+    else:
+      return 0
+      
+def solvable():
+  if n%2!=0 and parity_checker(initial)!=parity_checker(goal):
+    return False
+  if n%2==0 and parity_checker(initial)!=parity_checker(goal):
+    return False
+  return True
+  
 openlist=[]
 closedlist=[]
 path=[]
@@ -117,7 +148,10 @@ initial = np.array(entries).reshape(n, n)
 print("Please enter the elements of the goal matrix in a single line and separated by a space, represent the blank with a zero:") 
 entries = list(map(int, input().split()))
 goal = np.array(entries).reshape(n, n)
-if(Tree_Search(initial)):
-    print_path()
+if (solvable()==True):
+  if(Tree_Search(initial)):
+      print_path()
+  else:
+      print("No solution is available")
 else:
-    print("No solution is available")
+     print("Not solvable")

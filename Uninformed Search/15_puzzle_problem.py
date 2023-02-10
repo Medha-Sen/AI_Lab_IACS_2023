@@ -115,7 +115,7 @@ def parity_checker(mat): #checks the parity
   for i in range(len(temp)):
       x = i+1
       for j in range(x, len(temp)):
-          if(temp[i] > temp[j]):
+          if(temp[i] and temp[j] and (temp[i] > temp[j])):
               inv+=1 #counting no. of inversions
   if n%2!=0:# odd n
     if inv%2==0:

@@ -1,4 +1,0 @@
-To run the code files, please follow the steps written below:
-Step 1: Please ensure Python 3.10 is installed on your computer
-Step 2: Open the Terminal window and navigate to the folder where you have downloaded all the code files, (namely logic.py, utils.py, wumpusworld.py and inference.py) and type "python wumpusworld.py"
-Step 3: The output is displayed for the predefined input.

@@ -147,7 +147,7 @@ def hill_climbing(problem):
             return current.state #returns the final state
         current = neighbor #next to be expanded
         action_count=action_count+1 #new neighbor selected-action increases by 1
-        print("Objective function ", problem.value(neighbor)) #prints objective function
+        print("Objective function in action ",action_count," is ",problem.value(neighbor)) #prints objective function
     print("No. of actions taken ",action_count) #prints total number of actions taken
     print("Final state:")
     return current.state

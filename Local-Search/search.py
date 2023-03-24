@@ -156,13 +156,8 @@ class nQueens(Problem):
     def __init__(self, n):
         self.N = n
         l=[-1]*n # temporary list to hold the state tuple
-        repeat=[] #to record repetitions in the random rows generated
         for i in range(n):
-            k = randint(0, 100000) % n #selecting random row(0-n) for placing the queen in each column
-            while k in repeat: #checking if a random number is being repeated
-                k = randint(0, 100000) % n #selecting random row(0-n) for placing the queen in each column
-            repeat.append(k)
-            l[i]=k
+            l[i] = randint(0, 100000) % n #selecting random row(0-n) for placing the queen in each column
         self.initial=tuple(i for i in l)
         print("Initial state:")
         self.board(self.initial)
@@ -191,7 +186,7 @@ class nQueens(Problem):
         
     def board(self,state): #prints the board 
         board_mat=np.zeros((self.N,self.N))
-        for i in state:
+        for i in range(self.N):
             board_mat[state[i]][i]=1
         for i in range(self.N):
             for j in range(self.N):

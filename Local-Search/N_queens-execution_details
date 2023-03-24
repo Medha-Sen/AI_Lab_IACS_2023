@@ -1,0 +1,5 @@
+To run the code file "search.py", please follow the steps written below:
+Step 1: Please ensure Python 3.10 is installed on your computer
+Step 2: Open the Terminal window and navigate to the folder where you have downloaded the code files search.py and utils.py, and type "python search.py"
+Step 3: The code requires the board size (n) as an input.
+Step 4: The code will display the state of the board for the initial random board configuration generated as well as the final best configuration reached by local search. Additionally the code also displays the decreasing value of the objective function after every move as well the total number of moves required.

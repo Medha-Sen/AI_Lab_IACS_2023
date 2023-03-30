@@ -4,3 +4,7 @@ Step 2: Open the Terminal window and navigate to the folder where you have downl
 Step 3: The code requires the order of matrix_board (n) as an input. For 15 puzzle enter 4. For 8 puzzle enter 3. 
 The code also requires the initial and final board configurations entered as a string of space separated numbers from 1-15 for 15 puzzle and 1-8 for 8 puzzle. The blank tile should be denoted by a 0.
 Step 4: The code will display the initial and final configurations as well as the intermediate path along with the corresponding actions taken to get to the goal configurations.
+ 
+ ** EDIT**
+ The file also displays all the states explored from the open list in real time. This is done to demonstrate that the program is running in the case where the output is taking a long time to appear due to the explosion of created states.
+ 

@@ -1,1 +1,5 @@
-
+Please ensure that the sat solver Z3 is pre-installed.
+To run the file "8_queens_CSP.smtlib2" must be entered at the command line.
+One could also use an online demonstration of Z3 to run the code. A link for the same is attached below.
+Link: https://compsys-tools.ens-lyon.fr/z3/index.php
+Copy the code and paste in the space for input and click "Execute" to view the results.

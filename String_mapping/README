@@ -1,0 +1,11 @@
+Execution details
+
+The python file string_mapping.py and text files input.txt and output.txt must be downloaded in the same directory.
+
+Please ensure Python 3.10 is installed on your computer
+
+Open the Terminal window and navigate to the folder where you have downloaded all the above mentioned the files and type "python string_mapping.py"
+
+The program takes the input from the input.txt file and writes the output to the file output.txt. The output is also read from output.txt and displayed as the program output itself.
+
+Please note that the time limit that was suggested to be taken as the first line input in the problem statement, is ignored in the above implementation. The program starts taking input from the |V|.
